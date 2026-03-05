@@ -245,3 +245,31 @@ academic-paper 完成
 | 完成的論文 | 摘要 | abstract-only mode |
 | 完成的論文 | 格式轉換 | format-convert mode |
 | 完成的論文 | 引用檢查 | citation-check mode |
+
+---
+
+### Plan to Full Mode Conversion Protocol
+
+When a user completes `plan` mode and wants to proceed to `full` mode for actual paper writing:
+
+#### Conversion Checklist
+
+| Plan Mode Output | Full Mode Input | Conversion Action |
+|-----------------|-----------------|-------------------|
+| Chapter Plan (structure outline) | `structure_architect` agent | Map chapters → formal sections with heading levels; validate against `paper_structure_patterns.md` |
+| Socratic Responses (Q&A transcripts) | `argument_builder` agent | Extract claims + evidence + warrants from dialogue; discard conversational scaffolding |
+| Literature Notes (if any) | `literature_strategist` agent | Independent execution — plan mode notes serve as seed keywords only; full systematic search required |
+| Argument Sketches | `argument_builder` agent | Evaluate each sketch against 4-level scoring; only `adequate` or above proceed |
+
+#### Quality Gate
+
+Before conversion, ALL of the following must be true:
+- [ ] Every chapter in the Chapter Plan has at least 1 argument sketch rated `adequate` or above
+- [ ] The overall paper structure maps to a recognized pattern in `paper_structure_patterns.md`
+- [ ] At least 5 potential references have been identified (seeds for `literature_strategist`)
+- [ ] The research question is finalized (not still evolving from Socratic dialogue)
+
+#### What Gets Discarded
+- Conversational filler from Socratic dialogue (greetings, confirmations, repetitions)
+- Tentative ideas explicitly marked as "maybe" or "not sure" by the user
+- Plan mode's iterative drafts (only the final version of each chapter plan carries over)

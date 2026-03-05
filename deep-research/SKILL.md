@@ -2,8 +2,8 @@
 name: deep-research
 description: "Universal deep research agent team. 10-agent pipeline for rigorous academic research on any topic. 6 modes: full research, quick brief, paper review, lit-review, fact-check, and Socratic guided research dialogue. Covers research question formulation, Socratic mentoring, methodology design, systematic literature search, source verification, cross-source synthesis, APA 7.0 report compilation, editorial review, devil's advocate challenges, and ethics review. Triggers on: research, deep research, 研究, 深度研究, literature review, 文獻回顧, fact-check, 事實查核, guide my research, 引導我研究, 幫我想清楚, help me think through."
 metadata:
-  version: "2.1"
-  last_updated: "2026-03"
+  version: "2.2"
+  last_updated: "2025-03-05"
 ---
 
 # Deep Research — Universal Academic Research Agent Team
@@ -415,6 +415,21 @@ User: "引導我研究 [topic]" / "Guide my research on [topic]"
 6. **Reproducibility** — search strategies, inclusion criteria, and analytical methods must be documented for replication
 7. **Socratic integrity** — in socratic mode, never give direct answers; always guide through questions
 
+## Cross-Agent Quality Alignment
+
+Unified definitions to prevent inconsistency across agents:
+
+| Concept | Definition | Applies To |
+|---------|-----------|------------|
+| **Peer-reviewed** | Published in a journal with formal peer review process (editorial review alone does not qualify). Conference proceedings count only if explicitly peer-reviewed | bibliography_agent, source_verification_agent |
+| **Currency Rule** | Default: published within 5 years. Override by domain: CS/AI = 3 years, History/Philosophy = 20 years, Law = depends on jurisdiction changes. Seminal works exempt regardless of age | bibliography_agent, ethics_review_agent |
+| **CRITICAL severity** | Issue that, if unresolved, would invalidate a core conclusion or constitute academic misconduct. Requires immediate resolution before pipeline can proceed | All agents |
+| **Source Tier** | tier_1 = top-quartile peer-reviewed journal; tier_2 = other peer-reviewed; tier_3 = academic but not peer-reviewed; tier_4 = grey literature | bibliography_agent, source_verification_agent |
+| **Minimum Source Count** | full = 15+, quick = 5-8, lit-review = 25+, fact-check = 3+ per claim | bibliography_agent |
+| **Verification Threshold** | 100% DOI check + 50% WebSearch spot-check | source_verification_agent, ethics_review_agent |
+
+> **Cross-Skill Reference**: See `shared/handoff_schemas.md` for inter-stage data exchange formats.
+
 ---
 
 ## Integration with Other Skills
@@ -435,6 +450,7 @@ deep-research (socratic) + academic-paper (plan) -> Guided research + paper plan
 
 | Version | Date | Changes |
 |---------|------|---------|
+| 2.2 | 2025-03-05 | Added synthesis anti-patterns, Socratic quantified thresholds & auto-end conditions, reference existence verification (DOI + WebSearch), enhanced ethics reference integrity check (50% + Retraction Watch), mode transition matrix, cross-agent quality alignment definitions |
 | 2.1 | 2026-03 | Added IRB decision tree, EQUATOR reporting guidelines, preregistration guide + template; enhanced ethics_review_agent with human subjects dimension; enhanced research_architect_agent with ethics/EQUATOR/preregistration integration; enhanced methodology_patterns with EQUATOR cross-references |
 | 2.0 | 2026-02 | Added socratic mode (10th agent), failure paths, mode selection guide, handoff protocol, 2 new examples, 3 new references |
 | 1.0 | 2026-02 | Initial release: 9 agents, 5 modes, 6-phase pipeline |

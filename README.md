@@ -222,7 +222,7 @@ You: "進度" or "status"
 
 ## Skill Details
 
-### Deep Research (v2.0)
+### Deep Research (v2.2)
 
 10-agent pipeline for rigorous academic research:
 
@@ -239,7 +239,7 @@ You: "進度" or "status"
 | Ethics Review Agent | AI disclosure, attribution integrity |
 | **Socratic Mentor** | **Guided research dialogue (new in v2.0)** |
 
-### Academic Paper (v2.0)
+### Academic Paper (v2.2)
 
 10-agent pipeline for academic paper writing:
 
@@ -256,7 +256,7 @@ You: "進度" or "status"
 | Formatter | LaTeX/DOCX/PDF output |
 | **Socratic Mentor** | **Chapter-by-chapter guided planning (new in v2.0)** |
 
-### Academic Paper Reviewer (v1.1)
+### Academic Paper Reviewer (v1.3)
 
 7-agent multi-perspective review:
 
@@ -272,7 +272,7 @@ You: "進度" or "status"
 
 **Modes:** full, re-review (verification), quick, methodology-focus, guided
 
-### Academic Pipeline (v2.0)
+### Academic Pipeline (v2.2)
 
 9-stage orchestrator with integrity verification, two-stage review, and Socratic coaching:
 
@@ -325,6 +325,13 @@ HEEACT — Higher Education Evaluation and Accreditation Council of Taiwan
 ---
 
 ## Changelog
+
+### v2.2 / v1.3 (2025-03-05)
+- **Cross-Agent Quality Alignment**: unified definitions (peer-reviewed, currency rule, CRITICAL severity, source tier) across all agents
+- **deep-research v2.2**: synthesis anti-patterns, Socratic auto-end conditions, DOI+WebSearch verification, enhanced ethics integrity check, mode transition matrix
+- **academic-paper v2.2**: 4-level argument scoring, plagiarism screening, 2 new failure paths (F11 Desk-Reject Recovery, F12 Conference-to-Journal), Plan→Full mode conversion
+- **academic-paper-reviewer v1.3**: DA vs R3 role boundaries, CRITICAL finding criteria, consensus classification (4/3/SPLIT/DA-CRITICAL), confidence score weighting, Asian & Regional Journals reference
+- **academic-pipeline v2.2**: checkpoint confirmation semantics, mode switching matrix, failure fallback matrix, state ownership protocol, material version control
 
 ### v2.0.1 (2026-03)
 - **Simplify 4 SKILL.md** (-371 lines, -16.5%): remove cross-skill duplication, inline templates → file references, redundant routing tables, duplicate mode selection sections

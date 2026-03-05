@@ -18,6 +18,8 @@
 | F8 | Plan mode 不收斂 | > 15 輪對話未完成所有章節 | Medium | 建議跳到 outline-only mode |
 | F9 | Handoff 材料不完整 | 來自 deep-research 但缺關鍵材料 | Low | 列出缺失項，建議補充或重跑 |
 | F10 | 使用者中途放棄 | 明確表示不想繼續 | Low | 儲存已完成的 Chapter Plan |
+| F11 | Desk-Reject 退稿 | 期刊編輯未送審直接退回 | High | 分類退稿原因，選擇復原策略 |
+| F12 | 研討會論文轉期刊失敗 | 研討會論文擴展為期刊論文遭拒 | Medium | 確保 30-50% 新內容 + 正確引用 |
 
 ---
 
@@ -279,6 +281,52 @@ F7 (拒稿) → 分析後可能需要退回到 F2 (結構) 或 F1 (基礎)
 F8 (不收斂) → 可能演變為 F10 (放棄)
 ```
 
+### F11: Desk-Reject Recovery
+
+**Trigger**: Editor rejects the paper without sending to reviewers.
+
+**Cause Classification & Recovery**:
+
+| Cause | Diagnostic Signs | Recovery Strategy |
+|-------|-----------------|-------------------|
+| **Scope Mismatch** | Editor states "outside journal scope" or "not aligned with journal aims" | Re-analyze journal scope using `top_journals_by_field.md`; identify 3 alternative journals; may need to reframe the paper's contribution |
+| **Insufficient Novelty** | "Incremental contribution" or "well-established findings" | Strengthen the novelty claim in introduction; consider additional analysis or a new dataset; reposition the paper's unique contribution |
+| **Formatting Non-Compliance** | Immediate rejection for template/length/style violations | Review target journal's author guidelines; use `formatter_agent` to reformat; resubmit (often same journal accepts after formatting fix) |
+| **Poor Opening** | No specific reason given; likely the abstract/introduction failed to hook | Rewrite abstract with the CARS model (Create A Research Space); lead with the gap, not the background; have `peer_reviewer_agent` evaluate the new opening |
+
+**General Protocol**:
+1. Do NOT take desk-reject personally — 30-50% of submissions to top journals are desk-rejected
+2. Read the editor's email carefully for any specific feedback
+3. Determine the cause category above
+4. If Scope Mismatch: pivot journal, not paper
+5. If Novelty/Opening: revise paper, then resubmit (different journal recommended)
+6. Turnaround target: 2 weeks for reformatting, 4 weeks for substantive revision
+
+---
+
+### F12: Conference-to-Journal Conversion Failure
+
+**Trigger**: Attempt to expand a published conference paper into a journal article fails review.
+
+**Common Rejection Reasons & Solutions**:
+
+| Reason | Solution |
+|--------|----------|
+| **Insufficient Extension** (< 30% new content) | Journal expects 30-50% new material beyond the conference version. Add: extended related work, additional experiments/data, deeper analysis, new discussion sections |
+| **Self-Plagiarism Flag** | Explicitly cite the conference version in the introduction: "This paper extends our previous work [conf-citation] with..." Use iThenticate to verify < 30% text overlap |
+| **Stale Results** | If the conference paper is > 2 years old, results may be outdated. Update experiments with current data/baselines; acknowledge temporal limitations |
+| **Missing Journal Standards** | Conference papers often lack: detailed methodology, reproducibility information, limitations section, broader impact discussion. Add all of these |
+
+**Conversion Checklist**:
+- [ ] Conference version explicitly cited in introduction
+- [ ] 30-50% genuinely new content added (not just padding)
+- [ ] Text overlap with conference version < 30% (verified by similarity tool)
+- [ ] All reviewer expectations for a journal-length paper met
+- [ ] Notation in cover letter: "This is an extended version of [conference paper]"
+- [ ] Check journal policy: some journals prohibit conference-to-journal conversion
+
+---
+
 ## 預防措施
 
 | 失敗路徑 | 預防措施 |
@@ -292,3 +340,5 @@ F8 (不收斂) → 可能演變為 F10 (放棄)
 | F8 | socratic_mentor 設定每章節對話上限 |
 | F9 | intake_agent 在偵測 handoff 時就完整檢查材料 |
 | F10 | 保持對話節奏，避免讓使用者感到疲累 |
+| F11 | Phase 7 產出 cover letter 時研究目標期刊 scope；format_agent 嚴格遵守格式 |
+| F12 | intake_agent 偵測是否為研討會論文擴展；提早計算新內容比例 |

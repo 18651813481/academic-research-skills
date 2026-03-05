@@ -2,11 +2,11 @@
 name: academic-paper-reviewer
 description: "Multi-perspective academic paper review with dynamic reviewer personas. Simulates 5 independent reviewers (EIC + 3 peer reviewers + Devil's Advocate) with field-specific expertise. Supports full review, re-review (verification), quick assessment, methodology focus, and Socratic guided modes. Triggers on: review paper, 審查論文, peer review, 同儕審查, manuscript review, 稿件審查, referee report, 審稿意見, review my paper, 幫我審稿, critique paper, 論文評審."
 metadata:
-  version: "1.2"
-  last_updated: "2026-03"
+  version: "1.3"
+  last_updated: "2025-03-05"
 ---
 
-# Academic Paper Reviewer v1.2 — 多視角學術論文審查 Agent Team
+# Academic Paper Reviewer v1.3 — 多視角學術論文審查 Agent Team
 
 模擬國際期刊完整審稿流程：自動識別論文領域，動態配置 5 位 reviewer（主編 + 3 位同儕審查者 + 魔鬼代言人），從方法論、領域專業、跨領域觀點、核心論點挑戰四個不重疊角度審查，最終產出結構化 Editorial Decision 和 Revision Roadmap。
 
@@ -455,8 +455,8 @@ Step 9: academic-paper (format-convert) → 最終論文
 
 | 項目 | 內容 |
 |------|------|
-| Skill 版本 | 1.2 |
-| 最後更新 | 2026-03 |
+| Skill 版本 | 1.3 |
+| 最後更新 | 2025-03-05 |
 | 維護者 | HEEACT |
 | 相依 Skills | academic-paper v1.0+（上下游整合） |
 | 角色 | 多視角學術論文審查模擬器 |
@@ -467,6 +467,7 @@ Step 9: academic-paper (format-convert) → 最終論文
 
 | 版本 | 日期 | 變更 |
 |------|------|------|
+| 1.3 | 2025-03-05 | DA vs R3 role boundaries with explicit responsibility tables; CRITICAL finding criteria with concrete examples; Consensus classification (CONSENSUS-4/3/SPLIT/DA-CRITICAL); Confidence Score weighting rules; Asian & Regional Journals reference (TSSCI + Asia-Pacific + OA options) |
 | 1.2 | 2026-03 | Added statistical reporting standards reference; enhanced methodology_reviewer_agent with statistical reporting adequacy sub-step |
 | 1.1 | 2026-02 | 新增 Devil's Advocate Reviewer（第 7 agent），新增 re-review mode，審查團隊 4→5 人 |
 | 1.0 | 2026-02 | 初版：6 agents, 4 modes, 3-phase workflow |

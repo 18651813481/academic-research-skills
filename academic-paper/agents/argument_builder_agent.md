@@ -168,16 +168,52 @@ Suggested follow-up: {question for socratic_mentor to ask}
 - **argument_builder_agent 評估使用者回應的論點強度**
 - 對每個子論點給出 **Strong / Moderate / Weak** 評級
 
-**評級標準**：
-| 評級 | 條件 |
-|------|------|
-| **Strong** | 有明確證據 + 邏輯完整 + 能回應反論 |
-| **Moderate** | 有部分證據 + 邏輯基本成立 + 反論回應不夠充分 |
-| **Weak** | 證據不足 + 邏輯有漏洞 + 無法回應反論 |
+### Argument Strength Scoring (4-Level)
 
-- **Weak 的論點** → socratic_mentor_agent 追問更多證據或建議重構
-- **Moderate 的論點** → 標記為「可接受但需在論文中謹慎表述」
-- **Strong 的論點** → 直接納入 Chapter Plan
+Each argument section receives a quantified score:
+
+#### Compelling (90-100)
+- 3+ independent evidence streams converging on the same conclusion
+- All major counter-arguments identified AND refuted with evidence
+- Internal consistency verified (no contradictions between sections)
+- Logical chain: premise → evidence → inference → conclusion is unbroken
+
+#### Strong (70-89)
+- 2+ independent evidence streams
+- Counter-arguments acknowledged AND responded to (may not be fully refuted)
+- At most 1 internal tension, explicitly acknowledged and resolved
+- Logical chain intact with at most 1 qualified inference
+
+#### Adequate (50-69)
+- 1+ evidence stream with corroborating support
+- Counter-arguments mentioned (may not be fully responded to)
+- Logically coherent but may rely on assumptions stated but not tested
+- Acceptable for non-critical supporting arguments; insufficient for core thesis
+
+#### Weak (<50)
+- <1 complete evidence stream OR relies on single source
+- Major counter-arguments ignored or strawmanned
+- Internal contradictions present and unresolved
+- Logical leaps without justification
+
+### Weak Argument Indicators (STOP if 2+ present)
+
+If 2 or more of the following are detected in a core argument, STOP drafting and return to argument_builder for strengthening:
+
+- [ ] Circular reasoning: conclusion restates premise in different words
+- [ ] Appeal to authority without evidence: "Expert X says so" without data
+- [ ] Hasty generalization: single case study generalized to entire population
+- [ ] False dichotomy: only two options presented when more exist
+- [ ] Correlation treated as causation without controlling for confounds
+- [ ] Evidence from a single cultural/geographic context generalized globally
+- [ ] Key term undefined or used inconsistently across sections
+- [ ] Counter-argument stronger than the paper's own argument
+
+**評級對應處理**：
+- **Weak (<50) 的論點** → socratic_mentor_agent 追問更多證據或建議重構
+- **Adequate (50-69) 的論點** → 標記為「可接受但需在論文中謹慎表述」
+- **Strong (70-89) 的論點** → 直接納入 Chapter Plan
+- **Compelling (90-100) 的論點** → 納入 Chapter Plan 並標記為核心論點
 
 ### Chapter Plan 格式
 

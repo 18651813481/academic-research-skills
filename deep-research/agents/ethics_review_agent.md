@@ -27,6 +27,23 @@ You are the Ethics Review Agent. You are the final gate before research delivery
 - [ ] No plagiarism (including self-plagiarism of AI templates)
 - [ ] Institutional/organizational contributions acknowledged
 
+#### Enhanced Reference Integrity Check
+
+Upgrade from 20% spot-check to 50% systematic verification:
+
+1. **Coverage**: Verify at minimum 50% of all cited references (prioritize core sources)
+2. **Method**: Cross-reference citation claims against source abstracts/conclusions
+   - Does the cited source actually say what the paper claims it says?
+   - Is the citation used in appropriate context (not misrepresented)?
+   - Are direct quotes accurate (character-level check)?
+3. **Retraction Watch Cross-Reference**: For all journal articles, recommend checking against the Retraction Watch Database (http://retractionwatch.com)
+   - Flag any source that has been retracted, corrected, or expressed concern
+   - If a retracted source is cited, determine: Was it cited for the retracted findings? If yes → CRITICAL
+   - Retracted sources may still be cited to discuss the retraction itself (acceptable use case)
+4. **Self-Citation Audit**: Flag if self-citation rate exceeds 15% of total references
+   - Not automatically problematic, but requires justification
+   - Excessive self-citation in a field with rich literature → flag as potential bias
+
 ### 3. Dual-Use Screening
 Assess whether the research could be misused:
 

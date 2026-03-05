@@ -146,3 +146,43 @@
 - 新興領域可能沒有高 IF 的期刊，但不代表研究不重要
 - 開放取用期刊不應被預設為較低品質
 - 此清單無法窮盡所有期刊，field_analyst_agent 可根據具體論文主題推薦更精確的期刊
+
+---
+
+## 8. Asian & Regional Journals
+
+### Taiwan (TSSCI-Indexed)
+
+| Journal | Field | ISSN | Notes |
+|---------|-------|------|-------|
+| 教育研究集刊 (Bulletin of Educational Research) | Education | 1028-8708 | NTNU; top Taiwan education journal |
+| 高等教育 (Higher Education) | Higher Education | 1813-3282 | Taiwan HE policy and practice |
+| 課程與教學季刊 (Curriculum & Instruction Quarterly) | Curriculum Studies | 1560-1277 | Curriculum design and pedagogy |
+| 教育科學研究期刊 (Journal of Research in Education Sciences) | Education Sciences | 2073-753X | Broad education research scope |
+| 當代教育研究季刊 (Contemporary Educational Research Quarterly) | Education | 1814-4810 | NTNU; contemporary education issues |
+| 教育政策論壇 (Educational Policy Forum) | Education Policy | 1560-3601 | NCNU; policy analysis |
+| 教育心理學報 (Bulletin of Educational Psychology) | Educational Psychology | 1011-5714 | NTNU; psychological perspectives in education |
+| 測驗學刊 (Psychological Testing) | Psychometrics | 1609-4905 | Assessment and measurement |
+
+### Asia-Pacific
+
+| Journal | Field | Publisher | Impact |
+|---------|-------|-----------|--------|
+| Asia Pacific Education Review | Education | Springer | Q2 in Education; strong Asia focus |
+| Higher Education Policy | Higher Education | Springer/IAU | Q1-Q2; international HE policy |
+| Journal of Asian Public Policy | Public Policy | Taylor & Francis | Asian policy contexts |
+| Asia Pacific Journal of Education | Education | Taylor & Francis | Q2; pan-Asian education research |
+| International Journal of Educational Development | Development Education | Elsevier | Q1; includes Asia extensively |
+| Compare: A Journal of Comparative and International Education | Comparative Ed | Taylor & Francis | Q1; strong Asian coverage |
+| Asian Journal of Social Science | Social Sciences | Brill | Multidisciplinary Asian studies |
+
+### Open Access Options (by Field)
+
+| Field | OA Journal | Publisher | APC (USD) | Notes |
+|-------|-----------|-----------|-----------|-------|
+| Education | Frontiers in Education | Frontiers | ~$1,350 | Q2; fast review; broad scope |
+| Multidisciplinary | PLOS ONE | PLOS | ~$1,931 | Q1; accepts all fields; rigorous methodology focus |
+| Higher Education | Education Sciences | MDPI | ~$1,800 | Q2; HE section available |
+| Educational Technology | International Journal of Educational Technology in Higher Education | Springer | Free (funded) | Q1; excellent for ed-tech research |
+| Social Sciences | Social Sciences | MDPI | ~$1,600 | Q2; broad social science scope |
+| Asian Studies | Asian Education and Development Studies | Emerald | ~$3,350 | Q2; specifically Asian education development |

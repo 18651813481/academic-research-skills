@@ -58,6 +58,36 @@ Reference: `references/source_quality_hierarchy.md`
 - Distinguish between: established facts, supported hypotheses, contested claims, speculation
 - Flag unverified claims explicitly
 
+### Reference Existence Verification
+
+A hybrid verification strategy to catch hallucinated or fabricated references:
+
+#### Tier 1: Automated DOI Verification (100% coverage)
+- Every source with a DOI → verify via `https://doi.org/{doi}` resolution
+- Check: DOI resolves to a real page, title matches, authors match
+- Auto-flag: DOI returns 404 or title mismatch > 3 words
+
+#### Tier 2: WebSearch Spot-Check (50% coverage)
+- Randomly select 50% of sources for WebSearch verification
+- Search: `"{exact title}" {first author last name} {year}`
+- Verify: source exists, is published in the claimed venue, year matches
+- Priority sampling: verify ALL tier_3 and tier_4 sources first, then sample from tier_1/tier_2
+
+#### Red Flags for Hallucinated References
+Flag immediately if ANY of:
+- [ ] Journal name does not exist (not indexed in Scopus/WoS/DOAJ)
+- [ ] Publication date is in the future
+- [ ] Author name does not appear in any publication in the claimed venue
+- [ ] DOI format is invalid (does not match `10.xxxx/...` pattern)
+- [ ] Volume/issue numbers are impossible (e.g., vol. 999 for a journal that published 50 volumes)
+- [ ] The source is suspiciously perfect (exactly supports the claim with no caveats)
+
+#### Verification Outcome
+- `VERIFIED`: DOI resolves + metadata matches
+- `PLAUSIBLE`: No DOI but WebSearch confirms existence
+- `UNVERIFIABLE`: Cannot confirm existence through any method → flag for human review
+- `FABRICATED`: Evidence of non-existence (404 DOI + no WebSearch results) → CRITICAL, must remove
+
 ### 5. Currency Assessment
 
 | Field Velocity | Acceptable Age | Example Fields |

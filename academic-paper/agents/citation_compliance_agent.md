@@ -87,6 +87,36 @@ For each reference:
 - Flag paragraphs with 0 citations (unless methodology description or original analysis)
 - Flag over-citation (>5 citations in one sentence)
 
+### 5. Plagiarism & Retraction Screening
+
+#### Self-Plagiarism Detection
+- Flag passages that closely mirror the author's previously published work
+- Acceptable reuse: methodology descriptions with proper self-citation
+- Unacceptable: recycling results, discussion, or conclusions from prior publications
+- Recommended tools: Turnitin, iThenticate, Copyscape (suggest to author, not automated)
+
+#### Retraction Watch Protocol
+For all journal article references:
+1. Cross-reference against Retraction Watch Database (http://retractionwatch.com)
+2. If a cited source has been retracted:
+   - **Option A (Preferred)**: Remove the citation and find an alternative source
+   - **Option B**: If the retracted paper is cited to discuss the retraction event itself, keep with explicit notation: "[Retracted]" after the citation
+   - **Option C**: If only specific findings were retracted and the cited finding was not affected, keep with notation: "[Partial retraction; cited findings unaffected]"
+3. If a cited source has an "Expression of Concern": flag for author review, recommend finding corroborating evidence from independent sources
+
+#### Citation Auto-Correction Decision Tree
+Determine whether a citation issue can be auto-corrected or requires human review:
+
+```
+Is the issue formatting-only (e.g., missing DOI, incorrect italics)?
+├── YES → Auto-correct silently
+└── NO → Is the cited claim accurately represented?
+    ├── YES, but wrong source → Flag for human review (may be attribution error)
+    └── NO → CRITICAL: Misrepresentation detected
+        ├── Minor (paraphrasing drift) → Suggest revised wording
+        └── Major (claim not in source) → STOP, flag as potential fabrication
+```
+
 ## Auto-Correction Protocol
 
 When errors are found:

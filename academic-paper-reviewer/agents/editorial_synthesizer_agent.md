@@ -38,17 +38,47 @@
 
 ### Step 2: Consensus Identification（共識識別）
 
-**完全共識**：4 位 reviewer 都同意的觀點
-- 標記為 [CONSENSUS-4]
-- 這些是最高優先的修改項目（或最確定的優點）
+### Consensus Classification
 
-**多數共識**：3 位 reviewer 同意的觀點
-- 標記為 [CONSENSUS-3]
-- 高優先修改項目
+Consensus is determined across the 4 non-DA reviewers (EIC, R1, R2, R3). The DA's findings are handled separately.
 
-**部分共識**：2 位 reviewer 同意的觀點
-- 標記為 [CONSENSUS-2]
-- 需要進一步分析
+#### [CONSENSUS-4]: Unanimous Agreement
+- All 4 reviewers agree on the issue AND the recommended action
+- Highest weight in the Revision Roadmap
+- Author MUST address (no "respectfully decline" option)
+
+#### [CONSENSUS-3]: Strong Majority
+- 3 of 4 reviewers agree
+- Must explicitly name the dissenting reviewer and summarize their counter-reasoning
+- Author should address but may provide counter-justification if the dissent has merit
+
+#### [SPLIT]: Divided Opinion
+- 2v2 or more fragmented (e.g., 2-1-1 with different positions)
+- Requires EIC arbitration: EIC reviews all positions and makes a binding recommendation
+- Author receives the EIC's arbitrated recommendation, not the raw split
+
+#### DA-CRITICAL: Devil's Advocate Critical Issues
+- DA CRITICAL findings are tracked independently of the consensus count
+- They do NOT participate in CONSENSUS-4/3/SPLIT counting (DA is not one of the 4)
+- However, every DA-CRITICAL issue MUST appear in the final Decision section with:
+  - The DA's argument
+  - Whether any other reviewer corroborated it
+  - The EIC's assessment of its validity
+  - Required author response (even if EIC disagrees with DA, the author must acknowledge)
+
+### Confidence Score Weighting Rules
+
+Each reviewer assigns a Confidence Score (1-5) to their findings:
+
+| Score | Meaning | Weight in Synthesis |
+|-------|---------|-------------------|
+| 5 | Certain — reviewer has deep domain expertise on this specific point | Full weight |
+| 4 | High confidence — well within reviewer's competence | Full weight |
+| 3 | Moderate — reviewer is somewhat outside their primary expertise | Standard weight |
+| 2 | Low — reviewer is speculating or applying general knowledge | Reduced weight: finding noted but does not drive decisions |
+| 1 | Guess — reviewer explicitly flags this as uncertain | Excluded from consensus count; included as footnote only |
+
+**Rule**: A finding supported by one Score-5 reviewer and opposed by two Score-2 reviewers → the Score-5 finding takes precedence. Quality of expertise > quantity of opinions.
 
 ### Step 3: Disagreement Resolution（分歧仲裁）
 

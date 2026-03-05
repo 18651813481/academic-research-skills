@@ -224,3 +224,38 @@ Step 4: academic-paper (revision)
 Step 5: [重複 Step 3-4 直到通過]
           ↓ 最終版論文
 ```
+
+---
+
+## Mode Transition Matrix
+
+Rules for switching between modes mid-research. Not all transitions are safe.
+
+### Transition: quick → full
+- **When**: Quick brief reveals the topic is more complex than expected
+- **Reusable**: RQ Brief (as-is), initial keyword list
+- **Must Redo**: Full literature search (quick only uses 5-8 sources), synthesis, verification
+- **Quality Delta**: Full mode requires 15+ sources, 3+ databases, formal methodology design
+
+### Transition: lit-review → full
+- **When**: Literature review reveals a gap worth investigating with original methodology
+- **Reusable**: Complete bibliography, synthesis themes, evidence gap analysis
+- **Must Redo**: Research design (methodology_patterns), data collection plan, ethics review (if primary research)
+- **Quality Delta**: Full mode adds original research design; lit-review is secondary analysis only
+
+### Transition: socratic → full
+- **When**: Socratic dialogue produces a well-formed RQ and user wants autonomous research
+- **Reusable**: RQ Brief (with socratic_insights), accumulated INSIGHTs, scope definition
+- **Must Redo**: Everything after RQ formulation (bibliography, synthesis, verification, report)
+- **Quality Delta**: socratic mode only produces RQ Brief; full mode executes the complete pipeline
+
+### Transition: fact-check → full
+- **When**: Fact-checking reveals a claim is part of a larger contested topic worth researching
+- **Reusable**: Verified/debunked claims, source verification results
+- **Must Redo**: RQ formulation (reframe from verification to inquiry), full bibliography, synthesis
+- **Quality Delta**: Fact-check is binary (true/false/mixed); full mode produces nuanced analysis
+
+### Prohibited Transitions
+- **full → quick**: Cannot downgrade a full research to quick brief (loss of rigor)
+- **Any → socratic**: Socratic mode is an entry point only; cannot transition into it mid-pipeline
+- **paper-review → full**: Paper review evaluates existing work; full mode creates new research. These are fundamentally different tasks

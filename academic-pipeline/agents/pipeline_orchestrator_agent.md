@@ -118,6 +118,55 @@ Stage 3 REVIEW:    [mode] -- [一句話說明為什麼]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
+### Checkpoint Confirmation Semantics
+
+Users respond to checkpoint prompts with one of these commands. The orchestrator MUST recognize and act on each:
+
+| User Input | Action | State Change |
+|------------|--------|-------------|
+| `continue` / `yes` / `繼續` / `好` | Proceed to next stage | `pipeline_state` → next stage's `in_progress` |
+| `pause` / `暫停` | Pause pipeline; can resume later | `pipeline_state` = `paused`; all materials preserved |
+| `adjust` / `調整` | Allow user to modify next stage's mode or parameters | Prompt user for adjustments; apply before proceeding |
+| `redo` / `重做` / `回退` | Return to previous stage and re-execute | Roll back `pipeline_state` to previous stage; increment version label |
+| `skip` / `跳過` | Skip next stage (only non-critical stages) | Validate skip is safe (see below); proceed to stage after next |
+| `abort` / `終止` | Terminate pipeline entirely | `pipeline_state` = `aborted`; save all materials with current versions |
+
+**Skippable vs Non-Skippable Stages**:
+- Skippable: Stage 1 (deep-research, if user provides own bibliography), Stage 6 (re-review, if only minor revisions)
+- Non-Skippable: Stage 2 (writing), Stage 2.5 (mid-pipeline integrity), Stage 3 (initial review), Stage 4.5 (final integrity), Stage 5 (revision)
+
+### Mode Switching Rules
+
+Users may request changing a sub-skill's mode at a checkpoint. Not all switches are safe.
+
+| Switch | Safety | Notes |
+|--------|--------|-------|
+| deep-research: quick → full | SAFE | More thorough; may add time |
+| deep-research: full → quick | DANGEROUS | Loss of rigor; warn user explicitly |
+| academic-paper: plan → full | SAFE | Standard progression |
+| academic-paper: full → plan | PROHIBITED | Cannot un-write a draft |
+| academic-paper-reviewer: quick → guided | SAFE | More interactive review |
+| academic-paper-reviewer: guided → quick | DANGEROUS | Loses interactive depth |
+| Any integrity check mode change | PROHIBITED | Integrity verification modes are fixed by pipeline design |
+
+**DANGEROUS switches**: Orchestrator MUST display warning: "This switch reduces quality. Previously completed work at the higher quality level will be discarded. Are you sure? (yes/no)"
+
+**PROHIBITED switches**: Orchestrator MUST refuse: "This mode switch is not allowed because [reason]. The current mode will continue."
+
+### Skill Failure Fallback Matrix
+
+When a sub-skill stage fails or produces unacceptable output:
+
+| Stage | Failure Type | Fallback Strategy |
+|-------|-------------|-------------------|
+| Stage 1: deep-research | Insufficient sources found | Retry with expanded keywords; if still insufficient, allow user to provide manual sources; downgrade to `quick` mode with explicit quality note |
+| Stage 2: academic-paper | Draft quality below `adequate` threshold | Return to argument_builder for strengthening; if 2nd attempt fails, pause pipeline and request user input |
+| Stage 2.5: integrity (mid) | FAIL verdict | Mandatory: return to Stage 2 with integrity issues as revision requirements. Cannot skip or override |
+| Stage 3: reviewer | All reviewers reject | Pause pipeline; present rejection reasons; offer: (a) major revision and re-review, (b) pivot the paper's angle, (c) abort |
+| Stage 4.5: integrity (final) | FAIL verdict | Return to Stage 5 (revision) with final integrity issues. If 2nd integrity check also fails → abort pipeline with detailed report |
+| Stage 5: revision | Author cannot address a must_fix item | Escalate to user; options: (a) provide additional data/evidence, (b) reframe the claim, (c) remove the problematic section |
+| Any stage | Agent timeout or crash | Save current state via state_tracker; allow manual resume from last checkpoint |
+
 ### 4. 轉場管理
 
 **Handoff 材料傳遞規則：**

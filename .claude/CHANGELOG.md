@@ -4,6 +4,41 @@
 
 ---
 
+## 2025-03-05
+
+### v2.2 / v1.3 Cross-Agent Quality Alignment Update (4 skills)
+
+**修改檔案**: 19 files across 4 skills (+550 lines)
+
+**deep-research v2.2**:
+- Added cross-agent quality alignment definitions (peer-reviewed, currency rule, CRITICAL severity, source tier, minimum source count, verification threshold)
+- Synthesis anti-patterns, Socratic quantified thresholds & auto-end conditions
+- Reference existence verification (DOI + WebSearch)
+- Enhanced ethics reference integrity check (50% + Retraction Watch)
+- Mode transition matrix
+
+**academic-paper v2.2**:
+- 4-level argument strength scoring with quantified thresholds
+- Plagiarism & retraction screening protocol
+- F11 Desk-Reject Recovery + F12 Conference-to-Journal Conversion failure paths
+- Plan → Full mode conversion protocol
+
+**academic-paper-reviewer v1.3**:
+- DA vs R3 role boundaries with explicit responsibility tables
+- CRITICAL finding criteria with concrete examples
+- Consensus classification (CONSENSUS-4/3/SPLIT/DA-CRITICAL)
+- Confidence Score weighting rules
+- Asian & Regional Journals reference (TSSCI + Asia-Pacific + OA options)
+
+**academic-pipeline v2.2**:
+- Checkpoint confirmation semantics (6 user commands with precise actions)
+- Mode switching rules (safe/dangerous/prohibited matrix)
+- Skill failure fallback matrix (per-stage degradation strategies)
+- State ownership protocol (single source of truth with write access control)
+- Material version control (versioned artifacts with audit trail)
+
+---
+
 ## 2026-03-01
 
 ### Simplify Academic Research Skills SKILL.md (4 files)
