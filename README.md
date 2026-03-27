@@ -8,6 +8,8 @@
 
 A comprehensive suite of Claude Code skills for academic research, covering the full pipeline from research to publication.
 
+> **AI is your copilot, not the pilot.** This skill amplifies your research capability without replacing your judgment. Infrastructure is automated — literature search, citation formatting, reference verification, consistency checks. Decisions remain yours — defining the research question, choosing methodology, interpreting data, drawing conclusions. Style Calibration learns your writing voice so the output sounds like you, not like a language model. This is personalization, not humanization.
+
 ---
 
 ## Guides & Articles
