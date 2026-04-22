@@ -34,6 +34,9 @@
 
 ## macOS 使用方式
 
+- 优先双击 `Install Codex Academic Skills.app` 安装
+- 双击 `Update Codex Academic Skills.app` 更新
+- 双击 `Uninstall Codex Academic Skills.app` 卸载
 - 双击 `install.command` 安装
 - 双击 `update.command` 更新
 - 双击 `uninstall.command` 卸载
@@ -43,6 +46,11 @@
 ```bash
 bash install.sh
 ```
+
+说明：
+
+- `.app` 启动器会自动打开 Terminal 并执行对应脚本
+- 若通过网络、微信或浏览器下载，macOS 仍可能因为未签名而拦截；这是 Gatekeeper 行为，不代表脚本损坏
 
 ## Windows 使用方式
 

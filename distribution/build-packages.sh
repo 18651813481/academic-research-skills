@@ -9,6 +9,22 @@ MAC_SRC_DIR="$ROOT_DIR/distribution/macos"
 WIN_SRC_DIR="$ROOT_DIR/distribution/windows"
 SKILL_DIRS=(deep-research academic-paper academic-paper-reviewer academic-pipeline)
 
+build_macos_apps() {
+  local package_dir="$DIST_DIR/codex-academic-skills-macos"
+
+  rm -rf \
+    "$package_dir/Install Codex Academic Skills.app" \
+    "$package_dir/Update Codex Academic Skills.app" \
+    "$package_dir/Uninstall Codex Academic Skills.app"
+
+  osacompile -o "$package_dir/Install Codex Academic Skills.app" \
+    "$MAC_SRC_DIR/install.applescript"
+  osacompile -o "$package_dir/Update Codex Academic Skills.app" \
+    "$MAC_SRC_DIR/update.applescript"
+  osacompile -o "$package_dir/Uninstall Codex Academic Skills.app" \
+    "$MAC_SRC_DIR/uninstall.applescript"
+}
+
 build_package() {
   local platform="$1"
   local source_dir="$2"
@@ -43,6 +59,7 @@ mkdir -p "$DIST_DIR"
 
 build_package "macos" "$MAC_SRC_DIR"
 build_package "windows" "$WIN_SRC_DIR"
+build_macos_apps
 
 chmod +x \
   "$DIST_DIR/codex-academic-skills-macos/install.command" \
