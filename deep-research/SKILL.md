@@ -1,6 +1,6 @@
 ---
 name: deep-research
-description: "Universal deep research agent team. 13-agent pipeline for rigorous academic research on any topic. 7 modes: full research, quick brief, paper review, lit-review, fact-check, Socratic guided research dialogue, and systematic review with optional meta-analysis. Covers research question formulation, Socratic mentoring, methodology design, systematic literature search, source verification, cross-source synthesis, risk of bias assessment, meta-analysis, APA 7.0 report compilation, editorial review, devil's advocate challenges, ethics review, and post-research literature monitoring. Triggers on: research, deep research, literature review, systematic review, meta-analysis, PRISMA, evidence synthesis, fact-check, guide my research, help me think through, 研究, 深度研究, 文獻回顧, 文獻探討, 系統性回顧, 後設分析, 事實查核, 引導我的研究, 幫我釐清, 幫我想想, 我不確定要研究什麼, 研究方向, 研究主題."
+description: "通用型深度研究智能体团队。由 13 个智能体组成的严谨学术研究流水线，可用于任意主题。支持 7 种模式：完整研究、快速简报、论文评审、文献综述、事实核查、苏格拉底式引导研究对话，以及可选后设分析的系统综述。覆盖研究问题定义、苏格拉底式引导、方法设计、系统化文献检索、来源验证、跨来源综合、偏倚风险评估、后设分析、APA 7.0 报告编译、编辑审查、反方挑战、伦理审查，以及研究后的文献持续监测。触发词包括：research, deep research, literature review, systematic review, meta-analysis, PRISMA, evidence synthesis, fact-check, guide my research, help me think through, 研究, 深度研究, 文獻回顧, 文獻探討, 系統性回顧, 後設分析, 事實查核, 引導我的研究, 幫我釐清, 幫我想想, 我不確定要研究什麼, 研究方向, 研究主題."
 metadata:
   version: "2.9.0"
   last_updated: "2026-04-20"

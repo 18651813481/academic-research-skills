@@ -1,6 +1,6 @@
 ---
 name: academic-paper-reviewer
-description: "Multi-perspective academic paper review with dynamic reviewer personas. Simulates 5 independent reviewers (EIC + 3 peer reviewers + Devil's Advocate) with field-specific expertise. Supports full review, re-review (verification), quick assessment, methodology focus, Socratic guided, and calibration modes. Triggers on: review paper, peer review, manuscript review, referee report, review my paper, critique paper, simulate review, editorial review, calibrate reviewer, reviewer calibration, measure reviewer accuracy."
+description: "多视角学术论文评审技能，带动态审稿人角色。模拟 5 位具备领域专长的独立审稿人（主编 EIC + 3 位同行评审 + 反方审稿人）。支持完整评审、复审（验证）、快速评估、方法学聚焦、苏格拉底式引导和校准模式。触发词包括：review paper, peer review, manuscript review, referee report, review my paper, critique paper, simulate review, editorial review, calibrate reviewer, reviewer calibration, measure reviewer accuracy."
 metadata:
   version: "1.8.1"
   last_updated: "2026-04-15"

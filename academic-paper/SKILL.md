@@ -1,6 +1,6 @@
 ---
 name: academic-paper
-description: "12-agent academic paper writing pipeline. 10 modes (full/plan/outline/revision/revision-coach/abstract/lit-review/format-convert/citation-check/disclosure). 6 paper types, 5 citation formats, bilingual abstracts, LaTeX/DOCX-via-Pandoc/PDF output. Style Calibration + Writing Quality Check + Anti-Patterns with IRON RULE markers. Triggers: write paper, academic paper, guide my paper, parse reviews, AI disclosure, 寫論文, 學術論文, 引導我寫論文, 審查意見."
+description: "由 12 个智能体组成的学术论文写作流水线。支持 10 种模式（完整写作 / 规划 / 大纲 / 修订 / 修订辅导 / 摘要 / 文献综述 / 格式转换 / 引文检查 / AI 披露），覆盖 6 种论文类型、5 种引文格式、双语摘要，以及 LaTeX / 通过 Pandoc 生成 DOCX / PDF 输出。包含文风校准、写作质量检查和带 IRON RULE 标记的反模式约束。触发词包括：write paper, academic paper, guide my paper, parse reviews, AI disclosure, 寫論文, 學術論文, 引導我寫論文, 審查意見."
 metadata:
   version: "3.1.0"
   last_updated: "2026-04-20"

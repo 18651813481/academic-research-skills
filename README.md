@@ -1,10 +1,57 @@
-# Academic Research Skills for Claude Code
+# Academic Research Skills for Codex
 
 [![Version](https://img.shields.io/badge/version-v3.5.0-blue)](https://github.com/Imbad0202/academic-research-skills/releases/tag/v3.5.0)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/license-CC%20BY--NC%204.0-lightgrey)](https://creativecommons.org/licenses/by-nc/4.0/)
 [![Sponsor](https://img.shields.io/badge/sponsor-Buy%20Me%20a%20Coffee-orange?logo=buy-me-a-coffee)](https://buymeacoffee.com/crucify020v)
 
-[繁體中文版](README.zh-TW.md)
+[简体中文](README.zh-CN.md) | [繁體中文版](README.zh-TW.md)
+
+> This fork is maintained as a **Codex-ready distribution** of the original [`Imbad0202/academic-research-skills`](https://github.com/Imbad0202/academic-research-skills) project.
+>
+> Current fork goals:
+> - install cleanly into `~/.codex/skills/`
+> - preserve a stable, customer-friendly Codex entry point
+> - keep light local adaptations such as Simplified Chinese metadata and Codex-oriented installation guidance
+>
+> Recommended default entry in Codex: **`academic-pipeline`**
+
+## Codex Quick Start
+
+Install all four core skills into Codex:
+
+```bash
+python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+  --repo 18651813481/academic-research-skills \
+  --path deep-research academic-paper academic-paper-reviewer academic-pipeline
+```
+
+Then restart Codex.
+
+Recommended usage:
+
+- Full workflow: `academic-pipeline`
+- Research only: `deep-research`
+- Writing only: `academic-paper`
+- Review / re-review only: `academic-paper-reviewer`
+
+## What This Fork Changes
+
+- Keeps the upstream skill structure intact
+- Adds Codex-oriented installation and usage guidance
+- Localizes selected skill metadata into Simplified Chinese for easier discovery in Codex
+- Uses this repository as the stable distribution point instead of asking users to install directly from upstream
+
+## Update Policy
+
+- `origin` is this maintained fork for distribution
+- `upstream` points to the original project for tracking updates
+- New upstream changes should be reviewed and tested before being merged here
+- Client installs should prefer a tested tag rather than blindly tracking upstream `main`
+
+## License Note
+
+The upstream project currently declares **CC BY-NC 4.0**. This fork does not change that license.
+If you plan to distribute this to paying customers, bundle it into commercial services, or use it in other commercial contexts, review the license carefully and obtain any required permission from the original author before commercial distribution.
 
 A comprehensive suite of Claude Code skills for academic research, covering the full pipeline from research to publication.
 
