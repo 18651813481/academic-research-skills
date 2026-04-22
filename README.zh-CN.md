@@ -36,6 +36,25 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
 
 安装后重启 Codex。
 
+## 中国大陆 / 客户交付建议
+
+如果目标用户访问 GitHub 不稳定，建议不要让用户直接在线安装。
+
+推荐做法：
+
+- 使用离线安装包
+- 按操作系统分发两个版本：
+  - macOS
+  - Windows
+- 安装脚本自动识别路径：
+  - macOS：`$CODEX_HOME/skills`，默认 `~/.codex/skills`
+  - Windows：`%CODEX_HOME%\\skills`，默认 `%USERPROFILE%\\.codex\\skills`
+- 安装、更新、卸载前都会先备份旧版本
+
+仓库中的安装包构建说明见：
+
+- [`distribution/README.zh-CN.md`](distribution/README.zh-CN.md)
+
 ## 推荐使用方式
 
 日常默认使用：
@@ -91,4 +110,3 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
 ## 上游项目
 
 - Upstream: [Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills)
-
