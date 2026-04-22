@@ -32,6 +32,24 @@
 
 完成后请重启 Codex。
 
+## macOS 使用方式
+
+- 双击 `install.command` 安装
+- 双击 `update.command` 更新
+- 双击 `uninstall.command` 卸载
+
+如果系统阻止打开，可右键后选择“打开”，或在终端中执行：
+
+```bash
+bash install.sh
+```
+
+## Windows 使用方式
+
+- 双击 `install.bat` 安装
+- 双击 `update.bat` 更新
+- 双击 `uninstall.bat` 卸载
+
 ## 推荐测试句
 
 完整流程：

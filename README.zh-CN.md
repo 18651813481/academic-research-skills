@@ -50,6 +50,8 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
   - macOS：`$CODEX_HOME/skills`，默认 `~/.codex/skills`
   - Windows：`%CODEX_HOME%\\skills`，默认 `%USERPROFILE%\\.codex\\skills`
 - 安装、更新、卸载前都会先备份旧版本
+- macOS 安装包提供可双击的 `.command` 入口
+- Windows 安装包提供可双击的 `.bat` 入口
 
 仓库中的安装包构建说明见：
 

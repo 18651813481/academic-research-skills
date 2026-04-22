@@ -45,6 +45,9 @@ build_package "macos" "$MAC_SRC_DIR"
 build_package "windows" "$WIN_SRC_DIR"
 
 chmod +x \
+  "$DIST_DIR/codex-academic-skills-macos/install.command" \
+  "$DIST_DIR/codex-academic-skills-macos/update.command" \
+  "$DIST_DIR/codex-academic-skills-macos/uninstall.command" \
   "$DIST_DIR/codex-academic-skills-macos/install.sh" \
   "$DIST_DIR/codex-academic-skills-macos/update.sh" \
   "$DIST_DIR/codex-academic-skills-macos/uninstall.sh"
